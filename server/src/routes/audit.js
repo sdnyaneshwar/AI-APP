@@ -5,7 +5,7 @@ import { authenticate } from '../middlewares/authMiddleware.js';
 const router = express.Router();
 
 // GET /api/tickets/:id/audit
-router.get('/:id/audit', authenticate(), async (req, res) => {
+router.get('/', authenticate(), async (req, res) => {
   console.log("Fetching audit logs for ticket:", req.params.id);
   try {
     const logs = await AuditLog.find({ ticketId: req.params.id }).sort({ timestamp: 1 });

@@ -57,7 +57,7 @@ app.get('/readyz', async (req, res) => {
 app.use('/api/auth', authRoutes);
 app.use('/api/kb', kbRoutes);
 app.use('/api/tickets', ticketRoutes);
-app.use('/api/tickets', auditRoutes); // Note: /api/tickets/:id/audit
+app.use('/api/tickets/:id/audit', auditRoutes);
 app.use('/api/config', configRoutes);
 
 // Error handling
